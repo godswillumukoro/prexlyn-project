@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% load static humanize %}
+
+{% block content %}
+        <!--
+			=============================================
+				Feature Section Fifty One
+			==============================================
+			-->
+			<div class="fancy-feature-fiftyOne position-relative mt-200">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7 wow fadeInLeft">
+							<div class="title-style-five mb-65 lg-mb-40">
+								<a href="/listings" class=" fst-italic position-relative p-inline-12 p-block-6" style="color: #FF723A;">&#8592; View All Listings</a>
+								<h2 class="main-title fw-500 tx-dark" style="font-size: 2.8rem;">{{listing.title}}</h2>
+							</div>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<img src="images/lazy.svg" data-src="images/shape/shape_172.svg" alt="" class="lazy-img shapes shape-two">
+			</div> <!-- /.fancy-feature-fiftyOne -->
+
+
+
+			<!--
+			=============================================
+				Portfolio Details Two
+			==============================================
+			-->
+			<div class="portfolio-details-two pt-70 pb-50 lg-pb-10 md-pt-10">
+				<div class="project-desctiption">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 wow fadeInLeft">
+								<div id="gallery-carousel" class="carousel slide me-xxl-5 md-mb-10" data-bs-ride="carousel">
+									<div class="carousel-inner">
+
+										{% if listing.photo_1 %}
+										<div class="carousel-item active">
+											<img src="{{ listing.photo_main.url }}" class="d-block w-100" alt="...">
+										</div>
+										{% endif %}
+
+										{% if listing.photo_2 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_2.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_3 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_3.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_4 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_4.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_5 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_5.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_6 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_6.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_7 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_7.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_8 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_8.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_9 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_9.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_10 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_10.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_11 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_11.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_12 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_12.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_13 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_13.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_14 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_14.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+
+										{% if listing.photo_15 %}
+									    <div class="carousel-item">
+											<img src="{{ listing.photo_15.url }}" class="d-block w-100" alt="...">
+									    </div>
+										{% endif %}
+									</div>
+								  	<button class="carousel-control-prev" type="button" data-bs-target="#gallery-carousel" data-bs-slide="prev">
+								    	<i class="bi bi-chevron-left"></i>
+								    	<span class="visually-hidden">Previous</span>
+								  	</button>
+								  	<button class="carousel-control-next" type="button" data-bs-target="#gallery-carousel" data-bs-slide="next">
+								    	<i class="bi bi-chevron-right"></i>
+								   		<span class="visually-hidden">Next</span>
+								  	</button>
+
+								</div> <!-- /#gallery-carousel -->
+
+								<div>
+
+									<h3 class="mt-40">Overview</h3>
+									<p class="border-bottom pb-40" style="font-size: .85rem;">{{listing.description}}</p>
+								</div>
+							</div>
+
+
+
+							<div class="col-lg-4 wow fadeInRight">
+								<div class="sidebar ms-xl-5">
+
+									<div class="row">
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Location</div>
+											<div class="pt-text">{{listing.city}} {{listing.state}}, {{listing.zipcode}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Property Type</div>
+											<div class="pt-text">{{listing.property_choice}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Bedrooms</div>
+											<div class="pt-text">{{listing.bedrooms}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Bathrooms</div>
+											<div class="pt-text">{{listing.bathrooms}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Garage</div>
+											<div class="pt-text">{{listing.garage}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Sqft</div>
+											<div class="pt-text">{{listing.sqft}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Lot Size</div>
+											<div class="pt-text">{{listing.lot_size}}</div>
+										</div>
+										<div class="col-12 mb-35">
+											<div class="pt-title fw-bold tx-dark text-uppercase">Realtor</div>
+											<div class="pt-text">{{listing.realtor}}</div>
+										</div>
+
+										<div style="display: flex; flex-direction: row; justify-content: space-between;">
+											<a href="https://api.whatsapp.com/send?phone=2348052380693" class="btn" style="background-color: #f3f1f1; color: #000; outline: 1px solid #ff723a;">Request a tour</a>
+											<a href="tel:+234 805 238 0693" class="btn" style="background-color: #FF723A; color: #fff;">Call Realtor</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div> <!-- /.project-desctiption -->
+			</div> <!-- /.portfolio-details-two -->
+
+{% endblock %}

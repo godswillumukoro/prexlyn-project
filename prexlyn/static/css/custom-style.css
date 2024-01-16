@@ -1,0 +1,117 @@
+#listings-container {
+    margin: 0 auto;
+    width: 1200px;
+    color: black;
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+}
+
+#listings-container .box {
+    outline: 1.2px solid black;
+    margin-inline: 10px;
+    margin-block-end: 40px;
+}
+
+#listings-container > .box div {
+    background-color: lightgray;
+    padding-block: 80px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#listings-container ul {
+        list-style: none;
+        padding: 0;
+}
+
+#listings-container li {
+    padding: 5px 10px;
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+  }
+
+#listings-container h2 {
+    font-size: 1.8rem;
+}
+
+#listings-container h3 {
+    font-size: 1rem;
+}
+
+
+#listings-container .realtor {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#listings-container a:hover,
+#listings-container a:active {
+    color: #000;
+    font-weight: 500;
+}
+
+.p-inline-12 {
+    padding-inline: 12px;
+}
+
+.p-block-12 {
+    padding-block: 12px;
+}
+
+.p-block-6 {
+    padding-block: 6px;
+}
+
+/* pagination */
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #000;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #F97A11;
+    background-color: #eee;
+    border-color: #000;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #F97A11 !Important;
+    border: solid 1px #000 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #F97A11 !Important;
+    border: solid 1px #000;
+}
+
+.pagination .prev,
+.pagination .next {
+    color: #F97A11 !Important;
+
+}
+
+#listings-container.home-listings-container {
+    margin-top: 50px;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.team-members img {
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+}

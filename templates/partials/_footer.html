@@ -1,0 +1,152 @@
+{% load static %}
+
+
+    <!--
+			=====================================================
+				Fancy Short Banner Fifteen
+			=====================================================
+			-->
+			<div
+			class="fancy-short-banner-fifteen pt-150 lg-pt-80 pb-30 position-relative zn2 mt-40 lg-mt-60"
+		  >
+			<div class="container">
+			  <div class="wrapper">
+				<div class="row align-items-center">
+				  <div class="col-lg-6 wow fadeInLeft">
+					<h2 class="title fw-500 text-white mb-20">
+					  Start Your Real Estate Journey Today!
+					</h2>
+					<p class="text-lg text-white m0">
+					  For further info & support,
+					  <a
+						href="https://api.whatsapp.com/send?phone=2348052380693"
+						class="text-decoration-underline"
+						style="color: #ff733b"
+						>Contact us.</a
+					  >
+					</p>
+				  </div>
+				  <div class="col-lg-6 wow fadeInRight">
+					<div
+					  class="form-bg md-mt-40 ms-lg-4"
+					  style="background-color: #ff733b"
+					>
+					  <form action="#">
+						<div class="d-sm-flex justify-content-between">
+						  <input type="email" placeholder="Enter your email" />
+						  <button class="text-uppercase text-white">SEND</button>
+						</div>
+						<div class="fs-14 tx-dark opacity-75 mt-15">
+						  We’ll contact you shortly
+						</div>
+					  </form>
+					</div>
+					<!-- /.form-bg -->
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <!-- /.fancy-short-banner-fifteen -->
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<div class="footer-style-twelve theme-basic-footer position-relative zn2">
+				<div class="container">
+					<div class="line-bg-wrapper position-relative pt-130 pb-60 lg-pt-100 lg-pb-40" style="background: 'black';">
+						<div class="row justify-content-between">
+							<div class="col-lg-4 footer-intro mb-40">
+								<div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo/logo_prexlyn.png' %}" alt="" width="95"></a></div>
+								<p class="fs-18 text-white mt-15 mb-30">Shaping the Future of Real Estate in Nigeria</p>
+								<ul class="d-flex social-icon style-none">
+									<li><a href="https://www.facebook.com/best.link.3388"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="https://www.instagram.com/prexlynproperties/"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/prexlyn-concept-property-04a24416a/"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+							<div class="col-lg-2 col-sm-4 mb-30">
+								<h5 class="footer-title text-white fw-500">About</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'about' %}">About us</a></li>
+									<li><a href="{% url 'contact' %}">Contact</a></li>
+									<li><a href="/listings/propertychoice/cottage">Cottages</a></li>
+									<li><a href="{% url 'listings' %}">All Listings</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-2 col-sm-4 mb-30">
+								<h5 class="footer-title text-white fw-500">Services</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="/listings/propertychoice/apartment">Apartments</a></li>
+									<li><a href="/listings/propertychoice/bungalow">Bungalows</a></li>
+									<li><a href="/listings/propertychoice/duplex">Duplexes</a></li>
+									<li><a href="/listings/propertychoice/land">Lands</a></li>
+									<li><a href="/listings/propertychoice/house">Houses</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 col-sm-4 mb-30">
+								<h5 class="footer-title text-white fw-500">Address</h5>
+								<p>Road 4 VGC Shopping Complex <br> Ikota, Lagos</p>
+								<p>
+									Open a chat or give us call on <br /><a
+									  href="https://api.whatsapp.com/send?phone=2348052380693"
+									  class="call"
+									  style="color: #ff733b"
+									  >+234 805 238 0693</a
+									>
+								  </p>
+								<p>
+									<a
+									  href="tel:+234 803 442 3352"
+									  class="call"
+									  style="color: #ff733b"
+									  >+234 803 442 3352</a
+									>
+								  </p>
+							</div>
+						</div>
+
+						<p style="margin-top: 1rem;">All rights reserved. © {% now "Y" %} Prexlyn Properties</p>
+					</div> <!-- /.line-bg-wrapper -->
+				</div> <!-- /.container -->
+				<img src="images/lazy.svg" data-src="images/shape/shape_170.svg" alt="" class="lazy-img shapes shape-one">
+			</div> <!-- /.footer-style-twelve -->
+
+
+			<button class="scroll-top">
+				<i class="bi bi-arrow-up-short"></i>
+			</button>
+
+    <!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{% static 'vendor/jquery.min.js' %}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<!-- WOW js -->
+		<script src="{% static 'vendor/wow/wow.min.js' %}"></script>
+		<!-- Slick Slider -->
+		<script src="{% static 'vendor/slick/slick.min.js' %}"></script>
+		<!-- Fancybox -->
+		<script src="{% static 'vendor/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+		<!-- Lazy -->
+    	<script src="{% static 'vendor/jquery.lazy.min.js' %}"></script>
+    	<!-- js Counter -->
+		<script src="{% static 'vendor/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.waypoints.min.js' %}"></script>
+		<!-- Nice Select -->
+		<script src="{% static 'vendor/nice-select/jquery.nice-select.min.js' %}"></script>
+		<!-- validator js -->
+    	<script src="{% static 'vendor/validator.js' %}"></script>
+    	<!-- isotop -->
+		<script  src="{% static 'vendor/isotope.pkgd.min.js' %}"></script>
+
+		<!-- Theme js -->
+		<script src="{% static vendor js/theme.js %}"></script>
+		</div> <!-- /.main-page-wrapper -->
+</body>
+</html>

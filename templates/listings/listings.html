@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static humanize %}
+
+{% block content %}
+
+			<!--
+			=============================================
+				Feature Section Fifty One
+			==============================================
+			-->
+			<div class="fancy-feature-fiftyOne position-relative mt-200">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7 wow fadeInLeft">
+							<div class="title-style-five mb-65 lg-mb-40">
+								{% if not listings %}
+								<h2 class="main-title fw-500 tx-dark">There are no listings at this time.</h2>
+								{% else %}
+								<h2 class="main-title fw-500 tx-dark" style="font-size: 2.8rem;">Check out our Listings</h2>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<img src="images/lazy.svg" data-src="{% static 'images/shape/shape_172.svg' %}" alt="" class="lazy-img shapes shape-two">
+				<img src="images/lazy.svg" data-src="{% static 'images/shape/shape_175.svg' %}" alt="" class="lazy-img shapes shape-three">
+			</div> <!-- /.fancy-feature-fiftyOne -->
+
+
+			<!-- GRID START -->
+			<div id="listings-container">
+				{% if listings %}
+
+					{% for listing in listings %}
+
+								<div class="box">
+									<a href="{% url 'listing' listing.id %}">
+										<img src="{{ listing.photo_main.url }}" alt="">
+
+											<h2 class="p-inline-12 p-block-12">{{ listing.title }}</h2>
+											<ul class="p-inline-12 p-block-6">
+												<li>Price: {{ listing.price | intcomma }}</li>
+												<li>Address: {{listing.city}} {{listing.state}} {{listing.zipcode}}</li>
+												<li>Sqft: {{listing.sqft}}</li>
+												<li>Bedrooms: {{listing.bedrooms}}</li>
+												<li>Garage: {{listing.garage}}</li>
+												<li>Bathrooms: {{ listing.bathrooms|floatformat:0 }}</li>
+												<li>Uploaded: {{listing.list_date | timesince}}</li>
+											</ul>
+											<figure class="p-inline-12 p-block-6">
+												{% if "moses" in listing.realtor|lower|striptags %}
+												<img class="realtor" src="{% static 'images/team/moses.png' %}" alt="Team Member">
+												{% else %}
+												<img class="realtor" src="{% static 'images/team/tessy.png' %}" alt="Team Member">
+												{% endif %}
+												<figcaption><a href="tel:+234 805 238 0693">Call: {{listing.realtor}}</a></figcaption>
+											</figure>
+									</a>
+								</div>
+
+
+					{% endfor %}
+					{% endif %}
+				</div>
+				<!-- GRID END -->
+
+				<!-- PAGINATION -->
+					<div class="container">
+						{% if listings.has_other_pages %}
+
+						<nav>
+							<ul class="pagination">
+							{% if listings.has_previous %}
+							<li class="page-item">
+								<a href="?page={{listings.previous_page_number}}" class="page-link prev">&laquo; Previous</a>
+							</li>
+							{% else %}
+							<li class="page-item disabled">
+								<span class="page-link">Previous</span>
+							</li>
+							{% endif %}
+							{% for i in listings.paginator.page_range %}
+							{% if listings.number == i %}
+							<li class="page-item active" aria-current="page"><a class="page-link">{{i}}</a></li>
+							{% else %}
+							<li class="page-item">
+								<a href="?page={{i}}" class="page-link">{{i}}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% if listings.has_next %}
+							<li class="page-item">
+								<a href="?page={{listings.next_page_number}}" class="page-link next">Next &raquo;</a>
+							</li>
+							{% else %}
+							<li class="page-item disabled">
+								<span class="page-link">Next</span>
+							</li>
+							{% endif %}
+							</ul>
+						</nav>
+
+						{% endif %}
+
+					</div>
+{% endblock %}

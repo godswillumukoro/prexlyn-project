@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% load static humanize %}
+
+{% block content %}
+
+<div
+  class="hero-banner-thirteen position-relative zn2 pt-190 pb-90 lg-pb-10 lg-pt-10 md-pb-80"
+>
+  <div class="container">
+    <!-- /.row -->
+    <div class="search-form-bg position-relative wow fadeInUp">
+      <form method="GET" action="{% url 'search' %}" class="search-area">
+        <div class="row gx-0 align-items-center">
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">Buy or Rent a</div>
+              <select name="property_choice" class="nice-select">
+                {% for key, value in property_choices.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">State</div>
+              <select name="state" class="nice-select">
+                {% for key, value in state_choices.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">Price Range</div>
+              <select name="price_range" class="nice-select">
+                {% for key, value in price_range.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <button class="w-100 fw-500 tran3s" type="submit">Search Now</button>
+            </div>
+            <!-- /.input-block -->
+          </div>
+        </div>
+      </form>
+      <!-- /.search-area -->
+    </div>
+    <!-- /.search-form-bg -->
+  </div>
+</div>
+
+			<!--
+			=============================================
+				Feature Section Fifty One
+			==============================================
+			-->
+			<div class="fancy-feature-fiftyOne position-relative mt-40">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-lg-7 wow fadeInLeft">
+							<div class="title-style-five mb-65 lg-mb-40">
+								<a href="/listings" class=" fst-italic position-relative p-inline-12 p-block-6" style="color: #FF723A;">&#8592; View All Listings</a>
+								{% if not listings %}
+								<h2 class="main-title fw-500 tx-dark" style="font-size: 2.8rem;">No matches found in the search results</h2>
+								{% else %}
+								<h2 class="main-title fw-500 tx-dark" style="font-size: 2.8rem;">Displaying search results</h2>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<img src="images/lazy.svg" data-src="{% static 'images/shape/shape_172.svg' %}" alt="" class="lazy-img shapes shape-two">
+				<img src="images/lazy.svg" data-src="{% static 'images/shape/shape_175.svg' %}" alt="" class="lazy-img shapes shape-three">
+			</div> <!-- /.fancy-feature-fiftyOne -->
+
+
+			<!-- GRID START -->
+			<div id="listings-container">
+				{% if listings %}
+
+					{% for listing in listings %}
+
+								<div class="box">
+									<a href="{% url 'listing' listing.id %}">
+										<img src="{{ listing.photo_main.url }}" alt="">
+
+											<h2 class="p-inline-12 p-block-12">{{ listing.title }}</h2>
+											<ul class="p-inline-12 p-block-6">
+												<li>Price: {{ listing.price | intcomma }}</li>
+												<li>Address: {{listing.city}} {{listing.state}} {{listing.zipcode}}</li>
+												<li>Sqft: {{listing.sqft}}</li>
+												<li>Bedrooms: {{listing.bedrooms}}</li>
+												<li>Garage: {{listing.garage}}</li>
+												<li>Bathrooms: {{ listing.bathrooms|floatformat:0 }}</li>
+												<li>Uploaded: {{listing.list_date | timesince}}</li>
+											</ul>
+											<figure class="p-inline-12 p-block-6">
+												{% if "moses" in listing.realtor|lower|striptags %}
+												<img class="realtor" src="{% static 'images/team/moses.png' %}" alt="Team Member">
+												{% else %}
+												<img class="realtor" src="{% static 'images/team/tessy.png' %}" alt="Team Member">
+												{% endif %}
+												<figcaption><a href="tel:+234 805 238 0693">Call: {{listing.realtor}}</a></figcaption>
+											</figure>
+									</a>
+								</div>
+
+
+					{% endfor %}
+					{% endif %}
+				</div>
+				<!-- GRID END -->
+
+				<!-- PAGINATION -->
+					<div class="container">
+						{% if listings.has_other_pages %}
+
+						<nav>
+							<ul class="pagination">
+							{% if listings.has_previous %}
+							<li class="page-item">
+								<a href="?page={{listings.previous_page_number}}" class="page-link prev">&laquo; Previous</a>
+							</li>
+							{% else %}
+							<li class="page-item disabled">
+								<span class="page-link">Previous</span>
+							</li>
+							{% endif %}
+							{% for i in listings.paginator.page_range %}
+							{% if listings.number == i %}
+							<li class="page-item active" aria-current="page"><a class="page-link">{{i}}</a></li>
+							{% else %}
+							<li class="page-item">
+								<a href="?page={{i}}" class="page-link">{{i}}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% if listings.has_next %}
+							<li class="page-item">
+								<a href="?page={{listings.next_page_number}}" class="page-link next">Next &raquo;</a>
+							</li>
+							{% else %}
+							<li class="page-item disabled">
+								<span class="page-link">Next</span>
+							</li>
+							{% endif %}
+							</ul>
+						</nav>
+
+						{% endif %}
+
+					</div>
+{% endblock %}

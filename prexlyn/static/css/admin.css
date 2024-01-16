@@ -1,0 +1,27 @@
+#header {
+    height: 60px;
+    background-color: #03244c;
+    color: #fff;
+}
+
+#branding h1 {
+    color: #fff;
+}
+
+a:link,
+a:visited {
+    color: #03244c;
+}
+
+div.breadcrumbs {
+    background-color: #3969ad;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background-color: #3969ad;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default,
+.object-tools a.addlink {
+    background-color: #F97A11;
+}

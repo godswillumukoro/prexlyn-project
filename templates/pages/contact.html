@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="fancy-feature-fiftyOne position-relative mt-250 lg-mt-150">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 text-center m-auto wow fadeInUp">
+          <div class="title-style-five mb-65 lg-mb-40">
+            <h2 class="main-title fw-500 tx-dark">We're here to help.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.fancy-feature-fiftyOne -->
+
+  <!--
+              =============================================
+                  Contact Section One
+              ==============================================
+              -->
+  <div class="contact-section-one mt-60 lg-mt-30">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="address-block-two text-center mb-40 wow fadeInUp">
+            <div
+              class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"
+            >
+              <img src="{% static 'images/icon/icon_147.svg' %}" alt="" />
+            </div>
+            <h5 class="title">Our Address</h5>
+            <p>
+              Road 4 VGC Shopping Complex <br />
+              Ikota, Lagos
+            </p>
+          </div>
+          <!-- /.address-block-two -->
+        </div>
+        <div class="col-md-4">
+          <div class="address-block-two text-center mb-40 wow fadeInUp">
+            <div
+              class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"
+            >
+              <img src="{% static 'images/icon/icon_148.svg' %}" alt="" />
+            </div>
+            <h5 class="title">Contact Info</h5>
+            <p>
+              Drop us an email at <br /><a
+                href="mailto:info@prexlynproperties.com"
+                class="webaddress"
+                >info@prexlynproperties.com</a
+              >
+            </p>
+          </div>
+          <!-- /.address-block-two -->
+        </div>
+        <div class="col-md-4">
+          <div class="address-block-two text-center mb-40 wow fadeInUp">
+            <div
+              class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"
+            >
+              <img src="{% static 'images/icon/icon_149.svg' %}" alt="" />
+            </div>
+            <h5 class="title">Live Support</h5>
+            <p>
+              Open a chat or give us call on <br /><a
+                href="https://api.whatsapp.com/send?phone=2348052380693"
+                class="call"
+                style="color: #ff733b"
+                >+234 805 238 0693</a
+              >
+            </p>
+          </div>
+          <!-- /.address-block-two -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-9 m-auto">
+          <h2
+            class="tx-dark text-center mt-100 mb-80 lg-mt-40 lg-mb-40 wow fadeInUp"
+          >
+            Send us a message
+          </h2>
+        </div>
+        <div class="col-xl-11 m-auto">
+          <div class="form-style-one wow fadeInUp">
+            <form
+              action="inc/contact.php.html"
+              id="contact-form"
+              data-toggle="validator"
+            >
+              <div class="messages"></div>
+              <div class="row controls">
+                <div class="col-12">
+                  <div class="input-group-meta form-group mb-30">
+                    <input
+                      type="text"
+                      placeholder="Your Name*"
+                      name="name"
+                      required="required"
+                      data-error="Name is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="input-group-meta form-group mb-50">
+                    <input
+                      type="email"
+                      placeholder="Email Address*"
+                      name="email"
+                      required="required"
+                      data-error="Valid email is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-group-meta form-group mb-30">
+                    <textarea
+                      placeholder="Your message*"
+                      name="message"
+                      required="required"
+                      data-error="Please,leave us a message."
+                    ></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button
+                    class="btn-twentyOne fw-500 tran3s d-block"
+                    style="background-color: #ff733b"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- /.form-style-one -->
+        </div>
+      </div>
+    </div>
+
+    <div class="map-area-one p-30 mt-120 lg-mt-80 wow fadeInUp">
+      <div class="box-layout">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              class="gmap_iframe"
+              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=vgcshoppingcomplex%20lagos&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.contact-section-one -->
+
+{% endblock %}

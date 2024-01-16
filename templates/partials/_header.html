@@ -1,0 +1,217 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Lagos Real Estate, Property Investment Lagos, Luxury Homes Nigeria, Real Estate Consultancy Lagos, Exclusive Property Listings">
+		<meta name="description" content="Discover your dream property with Prexlyn Properties, your trusted partner in Lagos real estate. Our passionate team, industry expertise, and innovative strategies empower you to make informed decisions. Explore exclusive listings, from luxurious apartments to prime land opportunities. With personalized attention and cutting-edge technology, we redefine your real estate journey. Contact us for a consultation and unlock extraordinary opportunities in the vibrant Lagos market. Your dream home or investment awaits with Prexlyn Properties – where we turn dreams into reality.">
+      	<meta property="og:site_name" content="Prexlyn Properties">
+      	<!-- <meta property="og:url" content="https://heloshape.com/"> -->
+      	<meta property="og:type" content="website">
+      	<meta property="og:title" content="Prexyn Properties - Discover your perfect home today.">
+		<meta name='og:image' content='images/assets/ogg.png'>
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- For Window Tab Color -->
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#1d2b40">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#1d2b40">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#1d2b40">
+		<title>Prexyn Properties - Discover your perfect home today.</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="{% static 'images/logo/logo_prexlyn.png' %}">
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="all">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-style.css' %}" media="all">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" media="all">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-animation.css' %}" media="all">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/framework.css' %}" media="all">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}" media="all">
+
+		<!-- Fix Internet Explorer ______________________________________-->
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="vendor/html5shiv.js"></script>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->
+	</head>
+
+    <body>
+        <div class="main-page-wrapper">
+          <!--
+                =============================================
+                    Theme Main Menu
+                ==============================================
+                -->
+          <header class="theme-main-menu sticky-menu theme-menu-ten">
+            <div class="inner-content position-relative">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="logo order-lg-0">
+                  <a href="/" class="d-block"
+                    ><img src="{% static 'images/logo/logo_prexlyn.png' %}" alt="" width="70"
+                  /></a>
+                </div>
+
+                <div class="right-widget d-flex align-items-center order-lg-3">
+                  <form
+                    method="GET"
+                    action="{% url 'search' %}"
+                    class="header-search-two position-relative me-4 me-xxl-5 d-none d-xl-block"
+                  >
+                    <input type="text" name="keywords" placeholder="Search Here..." />
+                    <img
+                      src="{% static 'images/icon/icon_122.svg' %}"
+                      alt=""
+                      class="icon position-absolute"
+                    />
+                  </form>
+                  <!-- <a
+                    href="signin.html"
+                    class="login-btn-four rounded-circle tran3s me-3"
+                  >
+                    <i class="bi bi-person"></i>
+                  </a> -->
+                </div>
+                <!-- /.right-widget -->
+
+                <nav class="navbar navbar-expand-lg order-lg-2">
+                  <button
+                    class="navbar-toggler d-block d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="d-block d-lg-none">
+                        <div class="logo">
+                          <a href="index.html" class="d-block"
+                            ><img src="{% static 'images/logo/logo_prexlyn.png' %}" alt="" width="93"
+                          /></a>
+                        </div>
+                      </li>
+                      <li
+
+                        {% if '/' == request.path %}
+                          class="nav-item active"
+                        {% else %}
+                          class="nav-item"
+                        {% endif %}
+                      >
+                        <a
+                          class="nav-link"
+                          href="/"
+                          role="button"
+                          data-bs-auto-close="outside"
+                          aria-expanded="false"
+                          >Home</a
+                        >
+                      </li>
+
+                      <li
+
+                      {% if '/listings/' == request.path %}
+                        class="nav-item active"
+                      {% else %}
+                        class="nav-item"
+                      {% endif %}
+                      >
+                        <a
+                          class="nav-link"
+                          href="/listings/"
+                          role="button"
+                          data-bs-auto-close="outside"
+                          aria-expanded="false"
+                          >All Listings</a
+                        >
+                      </li>
+                      <li
+
+                      {% if '/listings/propertychoice/land' == request.path %}
+                        class="nav-item active"
+                      {% else %}
+                        class="nav-item"
+                      {% endif %}
+                      >
+                        <a
+                          class="nav-link"
+                          href="/listings/propertychoice/land"
+                          role="button"
+                          data-bs-auto-close="outside"
+                          aria-expanded="false"
+                          >Lands</a
+                        >
+                      </li>
+
+                      <li
+                      {% if '/about' == request.path %}
+                        class="nav-item active"
+                      {% else %}
+                        class="nav-item"
+                      {% endif %}
+                      >
+                        <a
+                          class="nav-link"
+                          href="/about"
+                          role="button"
+                          data-bs-auto-close="outside"
+                          aria-expanded="false"
+                          >About</a
+                        >
+                      </li>
+                      <li
+                      {% if '/accounts/signin' == request.path %}
+                        class="nav-item active"
+                      {% else %}
+                        class="nav-item"
+                      {% endif %}
+                      >
+                        <a
+                          class="nav-link"
+                          href="/accounts/signin"
+                          role="button"
+                          data-bs-auto-close="outside"
+                          aria-expanded="false"
+                          >Signin &rarr;</a
+                        >
+                      </li>
+                    </ul>
+                    <!-- Mobile Content -->
+                    <div class="mobile-content d-block d-lg-none">
+                      <div
+                        class="d-flex flex-column align-items-center justify-content-center mt-70"
+                      >
+                        <form
+                          action="#"
+                          class="header-search-two position-relative"
+                        >
+                          <input type="text" placeholder="Search Here..." />
+                          <img
+                            src="{% static 'images/icon/icon_122.svg' %}"
+                            alt=""
+                            class="icon position-absolute"
+                          />
+                        </form>
+                      </div>
+                    </div>
+                    <!-- /.mobile-content -->
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <!-- /.inner-content -->
+          </header>
+          <!-- /.theme-main-menu -->
+

@@ -1,0 +1,452 @@
+{% extends 'base.html' %}
+
+{% load static humanize %}
+
+{% block content %}
+<!--
+			=============================================
+				Theme Hero Banner
+			==============================================
+			-->
+<div
+  class="hero-banner-thirteen position-relative zn2 pt-190 pb-225 lg-pb-150 lg-pt-150 md-pb-80"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 m-auto">
+        <div class="text-wrapper wow fadeInUp">
+          <h1 class="hero-heading fw-500 tx-dark text-center">
+            Discover your <br />
+            perfect home
+            <span class="position-relative"
+              >today.
+              </span>
+          </h1>
+          <p class="text-lg tx-dark mb-80 pt-35 text-center lg-pt-20 lg-mb-50">
+            Let’s help find the property that's just right for you.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="search-form-bg position-relative wow fadeInUp">
+      <form method="GET" action="{% url 'search' %}" class="search-area">
+        <div class="row gx-0 align-items-center">
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">Buy or Rent a</div>
+              <select name="property_choice" class="nice-select">
+                {% for key, value in property_choices.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">State</div>
+              <select name="state" class="nice-select">
+                {% for key, value in state_choices.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <div class="title">Price Range</div>
+              <select name="price_range" class="nice-select">
+                {% for key, value in price_range.items %}
+                 <option value="{{key}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <!-- /.input-block -->
+          </div>
+          <div class="col-lg-3">
+            <div class="input-block">
+              <button class="w-100 fw-500 tran3s" type="submit">Search Now</button>
+            </div>
+            <!-- /.input-block -->
+          </div>
+        </div>
+      </form>
+      <!-- /.search-area -->
+    </div>
+    <!-- /.search-form-bg -->
+  </div>
+</div>
+<!-- /.hero-banner-thirteen -->
+
+<!--
+			=============================================
+				Feature Section Forty Seven
+			==============================================
+			-->
+      <div
+      class="fancy-feature-fortySeven zn2 position-relative pt-50 pb-50 lg-pt-100 lg-pb-100"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-5 wow fadeInLeft">
+            <div class="title-style-eleven text-center text-md-start sm-mb-30">
+              <h2 class="main-title tx-dark pb-50">Hot Deals 🔥</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID START -->
+          <div id="listings-container">
+            {% if listings %}
+
+              {% for listing in listings %}
+
+                    <div class="box">
+                      <a href="{% url 'listing' listing.id %}">
+                        <img src="{{ listing.photo_main.url }}" alt="">
+
+                          <h2 class="p-inline-12 p-block-12">{{ listing.title }}</h2>
+                          <ul class="p-inline-12 p-block-6">
+                            <li>Price: {{ listing.price | intcomma }}</li>
+                            <li>Address: {{listing.city}} {{listing.state}} {{listing.zipcode}}</li>
+                            <li>Sqft: {{listing.sqft}}</li>
+                            <li>Bedrooms: {{listing.bedrooms}}</li>
+                            <li>Garage: {{listing.garage}}</li>
+                            <li>Bathrooms: {{ listing.bathrooms|floatformat:0 }}</li>
+                            <li>Uploaded: {{listing.list_date | timesince}}</li>
+                          </ul>
+                          <figure class="p-inline-12 p-block-6">
+                            {% if "moses" in listing.realtor|lower|striptags %}
+                            <img class="realtor" src="{% static 'images/team/moses.png' %}" alt="Team Member">
+                            {% else %}
+                            <img class="realtor" src="{% static 'images/team/tessy.png' %}" alt="Team Member">
+                            {% endif %}
+                            <figcaption><a href="tel:+234 805 238 0693">Call: {{listing.realtor}}</a></figcaption>
+                          </figure>
+                      </a>
+                    </div>
+
+
+              {% endfor %}
+              {% endif %}
+            </div>
+            <!-- GRID END -->
+
+        <!-- /.tab-content -->
+      </div>
+    </div>
+    <!-- /.fancy-feature-fortySeven -->
+
+<!--
+			=============================================
+				Feature Section Forty Six
+			==============================================
+			-->
+<div class="fancy-feature-fortySix position-relative">
+  <div class="container">
+    <div
+      class="line-bg-wrapper position-relative pt-60 pb-60 lg-pt-120 md-pb-130"
+    >
+      <div class="row align-items-center">
+        <div class="col-lg-6 wow fadeInLeft">
+          <div class="title-style-eleven md-mb-20">
+            <h2 class="main-title tx-dark">
+              The best prices you can find anywhere!
+            </h2>
+          </div>
+        </div>
+        <div class="col-lg-5 ms-auto wow fadeInRight">
+          <p class="text-lg m0">
+            Discover the difference with our top-tier real estate services.We offer exclusive deals on lands,
+            apartments, and houses.
+          </p>
+        </div>
+      </div>
+
+      <div class="row gx-xxl-5 pt-90 lg-pt-40 md-pt-20">
+        <div class="col-lg-4 col-sm-6 wow fadeInUp">
+          <div class="card-style-twentyOne position-relative mt-35">
+            <img
+              src="{% static 'images/media/img_73.jpg' %}"
+              alt=""
+              class="lazy-img w-100"
+            />
+            <div
+              class="hover-overlay d-flex flex-column align-items-center position-absolute tran3s"
+            >
+              <h3 class="tx-dark">Apartments</h3>
+              <a href="/listings/propertychoice/apartment" class="btn-four fw-500 mt-auto"
+                >View Details</a
+              >
+            </div>
+            <!-- /.hover-overlay -->
+          </div>
+          <!-- /.card-style-twentyOne -->
+        </div>
+
+        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.35s">
+          <div class="card-style-twentyOne position-relative mt-35">
+            <img
+              src="{% static 'images/media/img_75.jpg' %}"
+              alt=""
+              class="lazy-img w-100"
+            />
+            <div
+              class="hover-overlay d-flex flex-column align-items-center position-absolute tran3s"
+            >
+              <h3 class="tx-dark">Duplexes</h3>
+              <a href="/listings/propertychoice/duplex" class="btn-four fw-500 mt-auto"
+                >View Details</a
+              >
+            </div>
+            <!-- /.hover-overlay -->
+          </div>
+          <!-- /.card-style-twentyOne -->
+        </div>
+
+        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="card-style-twentyOne position-relative mt-35">
+            <img
+              src="{% static 'images/media/lands.jpg' %}"
+              alt=""
+              class="lazy-img w-100"
+            />
+            <div
+              class="hover-overlay d-flex flex-column align-items-center position-absolute tran3s"
+            >
+              <h3 class="tx-dark">Lands</h3>
+              <a href="/listings/propertychoice/land" class="btn-four fw-500 mt-auto"
+                >View Details</a
+              >
+            </div>
+            <!-- /.hover-overlay -->
+          </div>
+          <!-- /.card-style-twentyOne -->
+        </div>
+      </div>
+
+      <div class="quote-wrapper text-center mt-120 lg-mt-80 wow fadeInUp">
+        <div class="row">
+          <div class="col-md-10 m-auto">
+            <div
+              class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"
+            >
+              <img
+                src="{% static 'images/icon/icon_138.svg' %}"
+                alt=""
+                class="lazy-img"
+              />
+            </div>
+            <p class="tx-dark mt-25 mb-30 fw-400" style="font-size: 2.8rem;">
+              "I highly recommend Prexlyn Properties. They guided me to find the
+              perfect home that met all my requirements."
+            </p>
+            <h6 class="fw-normal fst-italic tx-dark opacity-50 fs-20">
+             -  Gbenga Olufisoye
+            </h6>
+          </div>
+        </div>
+      </div>
+      <!-- /.quote-wrapper -->
+      <!-- <img src="images/lazy.svg" data-src="images/assets/sticker_01.png" alt="" class="lazy-img shapes shape-one"> -->
+    </div>
+    <!-- /.line-bg-wrapper -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.fancy-feature-fortySix -->
+
+<!--
+			=============================================
+				Feature Section Fifty
+			==============================================
+			-->
+<div class="fancy-feature-fifty position-relative mt-50 lg-mt-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 wow fadeInLeft">
+        <div class="title-style-five">
+          <h2 class="main-title fw-500 tx-dark">Frequently Asked Questions</h2>
+        </div>
+        <!-- /.title-style-five -->
+        <p class="text-lg mt-40 mb-45 lg-mt-20 lg-mb-30">
+          Prexlyn Properties is here to redefine the landscape of possibilities.
+        </p>
+        <a
+          href="/about"
+          class="btn-one fw-500"
+          >Learn more about us</a
+        >
+      </div>
+
+      <div class="col-xl-7 col-lg-6 ms-auto wow fadeInRight">
+        <div class="accordion accordion-style-seven md-mt-60" id="accordionOne">
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                How does Prexlyn Properties determine property valuations?
+              </button>
+            </div>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionOne"
+            >
+              <div class="accordion-body">
+                <p>
+                  At Prexlyn Properties, we employ a combination of industry
+                  knowledge, market analysis, and property assessment techniques
+                  to determine accurate property valuations. Our team considers
+                  factors such as location, property condition, comparable sales
+                  data, and market trends to provide fair and realistic
+                  valuations for our clients.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                What areas does Prexlyn Properties serve?
+              </button>
+            </div>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionOne"
+            >
+              <div class="accordion-body">
+                <p>
+                  Prexlyn Properties primarily operates in Nigeria, catering to
+                  the diverse real estate needs of clients within the city. Our
+                  extensive network and local expertise allow us to offer
+                  comprehensive services in various neighborhoods and areas
+                  across Nigeria.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="true"
+                aria-controls="collapseThree"
+              >
+                How can I get in touch with Prexlyn Properties?
+              </button>
+            </div>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionOne"
+            >
+              <div class="accordion-body">
+                <p>
+                  Getting in touch with Prexlyn Properties is easy! You can
+                  reach us through our website's contact form, email,
+                  <a
+                    href="https://api.whatsapp.com/send?phone=2348052380693"
+                    class="text-decoration-underline"
+                    style="color: #ff733b"
+                    >phone or whatsapp</a
+                  >. Our friendly team is always ready to assist you, answer
+                  your questions, and provide the necessary information to meet
+                  your real estate needs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Is Prexlyn Properties a licensed real estate company?
+              </button>
+            </div>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#accordionOne"
+            >
+              <div class="accordion-body">
+                <p>
+                  Yes, Prexlyn Properties is a fully licensed real estate
+                  company operating in compliance with all applicable
+                  regulations and requirements in Nigeria. We prioritize
+                  professionalism, ethical practices, and client satisfaction,
+                  ensuring a reliable and trustworthy real estate experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header" id="headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                What sets Prexlyn Properties apart from other real estate
+                agencies?
+              </button>
+            </div>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFive"
+              data-bs-parent="#accordionOne"
+            >
+              <div class="accordion-body">
+                <p>
+                  Prexlyn Properties stands out through our unwavering
+                  commitment to delivering exceptional service, personalized
+                  attention to clients' needs, extensive market knowledge, and a
+                  strong network of industry professionals. We strive to exceed
+                  expectations, provide innovative solutions, and create lasting
+                  relationships built on trust and integrity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.fancy-feature-fifty -->
+
+{% endblock %}

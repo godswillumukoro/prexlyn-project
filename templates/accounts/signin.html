@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="user-data-section d-flex align-items-center justify-content-center flex-column position-relative">
+    <div class="form-wrapper position-relative m-auto">
+        <!-- Alerts -->
+        {% include 'partials/_alerts.html' %}
+        <div class="text-center">
+            <h2 class="tx-dark mb-30 lg-mb-10">Sign In</h2>
+            <p class="fs-20 tx-dark">Don't have an account? <a href="/accounts/signup" style="text-decoration: underline;">Sign up instead</a></p>
+        </div>
+
+        <form action="{% url 'signup' %}" method="POST" class="user-data-form mt-40 lg-mt-30">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group-meta mb-30">
+                        <label>Email</label>
+                        <input name="email" type="email" placeholder="">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group-meta mb-25">
+                        <label>Password</label>
+                        <input name="password" type="password" placeholder="" class="pass_log_id">
+                        <span class="placeholder_icon"><span class="passVicon"><img src="images/icon/icon_151.svg" alt=""></span></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="agreement-checkbox d-flex justify-content-between align-items-center">
+                        <div>
+                            <!-- <input type="checkbox" id="remember"> -->
+                            <!-- <label for="remember">Keep me logged in</label> -->
+                        </div>
+                        <a href="/accounts/forgot">Forgot Password?</a>
+                    </div> <!-- /.agreement-checkbox -->
+                </div>
+                <div class="col-12">
+                    <button class="btn-twentyTwo w-100 fw-500 tran3s text-uppercase mt-30">Sign In</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <img src="images/lazy.svg" data-src="images/assets/ils_11.png" alt="" class="lazy-img illustration-one wow fadeInRight">
+    <img src="images/lazy.svg" data-src="images/assets/ils_12.png" alt="" class="lazy-img illustration-two wow fadeInLeft">
+</div> <!-- /.fancy-feature-fiftyOne -->
+
+{% endblock %}

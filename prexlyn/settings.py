@@ -144,3 +144,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
+
+try:
+    from . local_settings import *
+except ImportError:
+    pass

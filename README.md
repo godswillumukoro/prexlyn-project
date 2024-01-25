@@ -64,3 +64,8 @@ Navigate to your web browser and enter the following URL: `http://127.0.0.1:8000
 Navigate to your web browser and enter the following URL: `http://127.0.0.1:8000/admin`
 
 Now, you should have the project up and running locally. Feel free to explore and make any necessary adjustments based on your requirements.
+
+## Visual WalkThrough
+Play the video demo below to enjoy a visual walkthrough of the app's features.
+
+[![Play](https://img.youtube.com/vi/nhXdaz2eHGY/0.jpg)](https://www.youtube.com/watch?v=nhXdaz2eHGY)

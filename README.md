@@ -34,33 +34,46 @@ A comprehensive real estate listing platform
 - manage.py: Command Line Utility that manages this django project
 - requirements.txt: All installed python packages
 
-## Getting Started
-### 1. Clone this repository
-`git clone <repository_url>`
+## Running the App Locally
+### Clone this repository
+```
+git clone <repository_url>
+cd <repository_url>
+```
 
-### 2. Create a virtual environment: python -m venv venv
-`python -m venv venv`
+### Install Poetry
+```
+brew install pipx
+pipx ensurepath
+pipx install poetry
+```
 
-### 3. Activate the Virtual Environment
-Windows: `venv\Scripts\activate`
+### Activate Virtual Environment
+```
+poetry shell
+```
 
-MacOS or Unix: `source venv/bin/activate`
+### Deactivate Virtual Environment
+```
+exit
+```
 
-### 4. Install Required Packages
-`pip install -r requirements.txt`
+### Apply Migrations
+```
+python manage.py makemigrations
 
-### 5. Apply Migrations
-`python manage.py makemigrations`
+python manage.py migrate
+```
 
-`python manage.py migrate`
+### Run Development Server
+```
+python manage.py runserver
+```
 
-### 6. Run Development Server
-`python manage.py runserver`
-
-### 7. Accessing Development Server
+### Accessing Development Server
 Navigate to your web browser and enter the following URL: `http://127.0.0.1:8000/`
 
-### 7. Accessing Admin Dashboard
+### Accessing Admin Dashboard
 Navigate to your web browser and enter the following URL: `http://127.0.0.1:8000/admin`
 
 Now, you should have the project up and running locally. Feel free to explore and make any necessary adjustments based on your requirements.

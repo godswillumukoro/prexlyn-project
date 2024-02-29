@@ -2,8 +2,12 @@ asgiref==3.7.2
 astroid==3.0.2
 dill==0.3.7
 Django==4.2.8
+django-environ==0.11.2
+environ==1.0
+gunicorn==21.2.0
 isort==5.13.2
 mccabe==0.7.0
+packaging==23.2
 pillow==10.2.0
 platformdirs==4.1.0
 psycopg2-binary==2.9.9

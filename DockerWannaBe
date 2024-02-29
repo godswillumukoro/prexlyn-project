@@ -1,0 +1,21 @@
+FROM python:3.12
+
+RUN python -m pip install --user pipx
+RUN python -m pipx ensurepath
+
+RUN python -m pipx install poetry==1.7.1
+
+# RUN pipx install poetry==1.2.0
+
+ENV PATH="/root/.local/share/pipx/venvs/poetry/bin:$PATH"
+
+WORKDIR /app
+
+COPY . .
+
+RUN poetry install --no-interaction --no-cache
+
+EXPOSE 8000
+
+CMD ["poetry", "run", "python", "manage.py", "runserver"]
+

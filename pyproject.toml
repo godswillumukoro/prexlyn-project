@@ -23,6 +23,9 @@ sqlparse = "0.4.4"
 tomli = "2.0.1"
 tomlkit = "0.12.3"
 typing-extensions = "4.9.0"
+gunicorn = "^21.2.0"
+environ = "^1.0"
+django-environ = "^0.11.2"
 
 
 [build-system]

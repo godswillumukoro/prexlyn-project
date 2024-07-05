@@ -1,0 +1,41 @@
+[
+{
+    "model": "realtors.realtor",
+    "pk": 1,
+    "fields": {
+        "name": "Kehinde Fotobi",
+        "phoro": "photos/12/01/2024/Screenshot_2024-01-12_at_7.12.05PM.png",
+        "description": "Meet Kehinde Fotobi, a dedicated and passionate realtor committed to turning your real estate dreams into reality. With years of experience in the industry, Kehinde brings a wealth of knowledge and a keen eye for matching clients with their perfect properties.\r\n\r\nKnown for their exceptional communication skills and unwavering professionalism, Kehinde Fotobi guides clients through every step of the real estate journey. Whether you're buying, selling, or investing, Kehinde's personalized approach ensures that your unique needs are met with precision and care.\r\n\r\nIn addition to being a skilled negotiator, Kehinde stays ahead of market trends, providing clients with valuable insights to make informed decisions. Trustworthy, reliable, and with a knack for finding hidden gems in the market, Kehinde Fotobi is the realtor you can rely on for a seamless and successful real estate experience.",
+        "phone": "+2348011123412",
+        "email": "fatobi@prexlynproperties.com",
+        "is_mvp": false,
+        "hire_date": "2024-01-01T18:10:47Z"
+    }
+},
+{
+    "model": "realtors.realtor",
+    "pk": 2,
+    "fields": {
+        "name": "Moses Paul",
+        "phoro": "photos/12/01/2024/Screenshot_2024-01-12_at_7.20.35PM.png",
+        "description": "Moses Paul is a visionary in the world of real estate, dedicated to transforming your property aspirations into reality. With a dynamic and innovative approach, Moses stands out as a real estate professional who goes above and beyond to meet and exceed client expectations.\r\n\r\nBringing a fresh perspective to the industry, Moses Paul combines a passion for real estate with a commitment to personalized service. Whether you're a first-time homebuyer, a seasoned investor, or looking to sell your property, Moses guides you with expertise and a genuine understanding of your unique needs.\r\n\r\nMoses Paul is not just a realtor; he's a trusted advisor and advocate for his clients. Known for his strategic thinking and attention to detail, Moses navigates the complexities of the real estate market, ensuring a smooth and successful experience for every client.\r\n\r\nStay ahead of the curve with Moses Paul, where innovation meets integrity in the world of real estate. Your dream property is just a consultation away, as Moses brings together passion, knowledge, and a commitment to excellence in every transaction.",
+        "phone": "+2341233345832",
+        "email": "moses@prexlynproperties.com",
+        "is_mvp": false,
+        "hire_date": "2023-03-01T18:18:30Z"
+    }
+},
+{
+    "model": "realtors.realtor",
+    "pk": 3,
+    "fields": {
+        "name": "Tessy Onome",
+        "phoro": "photos/12/01/2024/Screenshot_2024-01-12_at_7.20.50PM.png",
+        "description": "Meet Tessy Onome, your dedicated partner in the world of real estate. Tessy is not just a realtor; she's a compassionate guide on your journey to finding the perfect home or investment property.\r\n\r\nWith a warm and personalized approach, Tessy takes the time to understand your unique preferences and aspirations. Whether you're searching for a cozy home, an investment opportunity, or your dream property, Tessy's expertise ensures a seamless and enjoyable experience.\r\n\r\nTessy Onome's commitment to client satisfaction goes beyond the transaction. Known for her excellent communication skills and attention to detail, Tessy keeps you informed at every step of the process, making sure your real estate journey is stress-free and rewarding.\r\n\r\nAs a real estate companion, Tessy embraces the responsibility of turning your vision into reality. Her passion for real estate, combined with a genuine care for her clients, sets Tessy Onome apart as a trusted name in the industry.\r\n\r\nNavigate the real estate landscape with confidence and ease alongside Tessy Onome. Your perfect property match awaits, and Tessy is here to make your real estate dreams come true.",
+        "phone": "+23433311211",
+        "email": "tessy@prexlynproperties.com",
+        "is_mvp": false,
+        "hire_date": "2023-06-05T18:21:03Z"
+    }
+}
+]

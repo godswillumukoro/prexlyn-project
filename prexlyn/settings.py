@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l6noznval!h882cnxb9!btl%+85fa)6%gn^@+g1n+2dgdab9j!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["prexlyn-project.onrender.com"]
+# ALLOWED_HOSTS = ["prexlyn-project.onrender.com"]
 
 
 # Application definition
@@ -82,14 +82,31 @@ WSGI_APPLICATION = 'prexlyn.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'prexlyn_project',
-        'USER': 'admin',
-        'PASSWORD': 'RuY0EwxCNYxxf4xkaekIa286bPNYeHx4',
-        'HOST': 'dpg-cq3uj2jqf0us73docqhg-a'
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'prexlyn_project',
+#         'USER': 'admin',
+#         'PASSWORD': 'RuY0EwxCNYxxf4xkaekIa286bPNYeHx4',
+#         'HOST': 'dpg-cq3uj2jqf0us73docqhg-a.oregon-postgres.render.com'
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'prexlyn',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost'
+#     }
+# }
 
 
 # Password validation

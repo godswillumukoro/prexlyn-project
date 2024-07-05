@@ -1,0 +1,20 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$5cT2thZ7UNiVdePyCHiTji$2qIW16L1s4OGIo+x8hk02+oAHIo727OXaYBDXwhz1IU=",
+        "last_login": "2024-07-05T13:23:35.212Z",
+        "is_superuser": true,
+        "username": "root",
+        "first_name": "",
+        "last_name": "",
+        "email": "umukoro6@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-01-12T16:29:15.092Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

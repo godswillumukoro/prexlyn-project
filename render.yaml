@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: prexlyn
+    buildCommand: "./build.sh"
+    env: python
+    startCommand:  "gunicorn prexlyn.wsgi:application"
